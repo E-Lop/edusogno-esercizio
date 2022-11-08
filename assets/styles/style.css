@@ -34,4 +34,60 @@ header {
     font-size: 32px;
     font-weight: 700;
     color: #134077;
+    margin-bottom: 22px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_card {
+    border: 1px solid #134077;
+    display: flex;
+    flex-direction: column;
+    width: 662px;
+    padding-top: 46px;
+    padding-bottom: 52px;
+    padding-left: 36px;
+    padding-right: 47px;
+    border-radius: 19px;
+}
+label {
+    font-size: 13px;
+    margin-bottom: 19px;
+    font-weight: 700;
+}
+input::placeholder {
+    font-size: 20px;
+    color: #cccccc;
+}
+.input_field_style {
+    width: 579px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #2d224c;
+    padding-block: 8px;
+    margin-bottom: 47px;
+}
+.blue_btn {
+    background-color: #0057ff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 11px;
+}
+#login_btn {
+    width: 577px;
+    padding-top: 20px;
+    padding-bottom: 19px;
+    margin-bottom: 49px;
+}
+
+.register_invite {
+    align-self: center;
+
+}
+.register_invite span {
+    font-weight: 700;
 }
