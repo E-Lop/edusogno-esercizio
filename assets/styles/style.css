@@ -1,0 +1,37 @@
+/*** RESET ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+
+}
+
+img {
+width: 100%;
+display: block;
+}
+
+/* HEADER SECTION */
+header img {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    width: 123px;
+}
+
+/* TODO */
+header {
+    border-bottom: 1px solid #00000003;
+    border-radius: 13px;
+    box-shadow: 0px 18px 18px -6px #0057ff;
+    margin-bottom: 122px;
+}
+
+/* MAIN SECTION */
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #134077;
+}
