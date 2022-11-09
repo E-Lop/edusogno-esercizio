@@ -55,7 +55,7 @@ if($result && $result->num_rows > 0) {
                 <div class="single_event">
                     <div class="event_title"><?php echo $event['nome_evento'] ?> </div>
                     <div class="event_date"><?php echo $event['data_evento'] ?></div>
-                    <div class="blue_btn join_btn">join</div>
+                    <a href="#" class="blue_btn join_btn">join</a>
                 </div>
             
             <?php } ?>
