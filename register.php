@@ -70,7 +70,7 @@ if(isset($_POST['signup_btn'])){
     <!-- Header section -->
     <header>
         <div class="logo">
-            <img src="assets\img\logo.jpg" alt="Edusogno logo">
+            <a href="index.php"><img src="assets\img\logo.jpg" alt="Edusogno logo"></a>
         </div>
     </header>
 
