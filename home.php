@@ -1,9 +1,16 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/database_connection.php';
 
+
+$user = $_SESSION['uname'];
+// get user data
+$sql2 = "SELECT * FROM `utenti` WHERE `email` = '$user' ";
+$result2 = $conn->query($sql2);
+$userdata = $result2->fetch_assoc();
+
 // select all events user is attending
-$sql = "SELECT * FROM `eventi` WHERE `attendees` LIKE '%ulysses200915@varen8.com%';";
+$sql = "SELECT * FROM `eventi` WHERE `attendees` LIKE '%$user%' ";
 $result = $conn->query($sql);
 
 $events = [];
@@ -17,7 +24,6 @@ if($result && $result->num_rows > 0) {
     // Si può fare qualcosa se non ci sono risultati dal db
     echo 'Nessun risultato';
 }
-var_dump($_SESSION['uname']);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +48,7 @@ var_dump($_SESSION['uname']);
 
     <!-- Main section -->
     <main>
-        <div class="welcome">Ciao [NOME] ecco i tuoi eventi</div>
+        <div class="welcome">Ciao <?php echo $userdata['nome'] ?> ecco i tuoi eventi</div>
         <div class="container-wide">
             <!-- events mask -->
             <?php foreach ($events as $event) { ?>

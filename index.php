@@ -19,7 +19,7 @@ if(isset($_POST['login_btn'])){
             $_SESSION['uname'] = $uname;
             header('Location: home.php');
         }else{
-            echo "Invalid username and password";
+            echo "Email e password invalide";
         }
 
     }

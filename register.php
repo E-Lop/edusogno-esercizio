@@ -125,7 +125,7 @@ if(isset($_POST['signup_btn'])){
                 
                 <button type="submit" name="signup_btn" class="blue_btn access_btn">Registrati</button>
             </form>
-                <div class="invite">Hai già un account? <a href="register.php">Accedi</a> </div>
+                <div class="invite">Hai già un account? <a href="index.php">Accedi</a> </div>
             </div>
         </div>
     </main>
