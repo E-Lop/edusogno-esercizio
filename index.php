@@ -1,22 +1,30 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/database_connection.php';
 
-// Leggere tutti gli utenti
-/* $sql = "SELECT * FROM `utenti`;";
-$result = $conn->query($sql);
+if(isset($_POST['login_btn'])){
 
-$utenti = []; */
+    $uname = mysqli_real_escape_string($conn,$_POST['email']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
 
-// Controllo che la query abbia prodotto dei risultati
-/* if($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $utenti[] = $row;
+    if ($uname != "" && $password != ""){
+
+        $sql_query = "select count(*) as cntUser from utenti where email='".$uname."' and password='".$password."'";
+        $result = mysqli_query($conn,$sql_query);
+        $row = mysqli_fetch_array($result);
+
+        $count = $row['cntUser'];
+
+        if($count > 0){
+            $_SESSION['uname'] = $uname;
+            header('Location: home.php');
+        }else{
+            echo "Invalid username and password";
+        }
+
     }
-} else { */
-    // Si può fare qualcosa se non ci sono risultati dal db
-    // echo 'Nessun risultato';
-// }
+
+}
 
 ?>
 
@@ -48,12 +56,15 @@ $utenti = []; */
         <div class="container">
             <!-- Login mask -->
             <div class="login_card">
-                <form action="">
+                <form method="post" action="">
+                    <!-- username input -->
                     <label for="email">Inserisci l'e-mail</label><br>
                     <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com"><br>
+                    <!-- password input -->
                     <label for="password">Inserisci la password</label><br>
                     <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
-                    <input class="blue_btn" type="button" value="ACCEDI" id="login_btn">
+                    <!-- submit button -->
+                    <input class="blue_btn" type="submit" value="ACCEDI" name="login_btn" id="login_btn">
                 </form>
                 <div class="register_invite">Non hai ancora un profilo? <span>Registrati</span></div>
             </div>
