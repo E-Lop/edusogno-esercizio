@@ -64,9 +64,9 @@ if(isset($_POST['login_btn'])){
                     <label for="password">Inserisci la password</label><br>
                     <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
                     <!-- submit button -->
-                    <input class="blue_btn" type="submit" value="ACCEDI" name="login_btn" id="login_btn">
+                    <input class="blue_btn access_btn" type="submit" value="ACCEDI" name="login_btn" id="login_btn">
                 </form>
-                <div class="register_invite">Non hai ancora un profilo? <span>Registrati</span></div>
+                <div class="invite">Non hai ancora un profilo? <a href="register.php">Registrati</a> </div>
             </div>
         </div>
     </main>

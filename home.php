@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/database_connection.php';
 
+// select all events user is attending
 $sql = "SELECT * FROM `eventi` WHERE `attendees` LIKE '%ulysses200915@varen8.com%';";
 $result = $conn->query($sql);
 
@@ -16,7 +17,7 @@ if($result && $result->num_rows > 0) {
     // Si può fare qualcosa se non ci sono risultati dal db
     echo 'Nessun risultato';
 }
-var_dump($events);
+var_dump($_SESSION['uname']);
 ?>
 
 <!DOCTYPE html>
