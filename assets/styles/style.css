@@ -82,6 +82,7 @@ input::placeholder {
     font-size: 20px;
     border-radius: 11px;
     border-style: none;
+    text-align: center;
 }
 #login_btn {
     width: 577px;
@@ -106,10 +107,17 @@ input::placeholder {
     color: #134077;
     margin-bottom: 85px;
 }
+.container-wide {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
 .single_event {
     border: 1px solid #134077;
     display: flex;
     flex-direction: column;
+    width: 349px;
     padding-top: 37px;
     padding-bottom: 34px;
     padding-left: 28px;
@@ -132,4 +140,6 @@ input::placeholder {
     padding-bottom: 19px;
     padding-inline: 29px;
     margin-bottom: 34px;
+    align-items: center;
+    border-radius: 11px;
 }

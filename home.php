@@ -1,3 +1,24 @@
+<?php
+
+require_once __DIR__ . '/database_connection.php';
+
+$sql = "SELECT * FROM `eventi` WHERE `attendees` LIKE '%ulysses200915@varen8.com%';";
+$result = $conn->query($sql);
+
+$events = [];
+
+// Controllo che la query abbia prodotto dei risultati
+if($result && $result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $events[] = $row;
+    }
+} else {
+    // Si può fare qualcosa se non ci sono risultati dal db
+    echo 'Nessun risultato';
+}
+var_dump($events);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +44,17 @@
         <div class="welcome">Ciao [NOME] ecco i tuoi eventi</div>
         <div class="container-wide">
             <!-- events mask -->
-            <div class="single_event">
-                <div class="event_title">Nome evento</div>
-                <div class="event_date">data orario</div>
-                <div class="blue_btn">join</div>
-            </div>
+            <?php foreach ($events as $event) { ?>
+                <div class="single_event">
+                    <div class="event_title"><?php echo $event['nome_evento'] ?> </div>
+                    <div class="event_date"><?php echo $event['data_evento'] ?></div>
+                    <div class="blue_btn join_btn">join</div>
+                </div>
+            
+            <?php } ?>
+            
+            <!-- events mask -->
+            
         </div>
     </main>
 </body>
