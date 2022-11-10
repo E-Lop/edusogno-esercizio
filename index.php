@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/database_connection.php';
 
+// login logic
 if(isset($_POST['login_btn'])){
 
     $uname = mysqli_real_escape_string($conn,$_POST['email']);
@@ -19,12 +20,16 @@ if(isset($_POST['login_btn'])){
             $_SESSION['uname'] = $uname;
             header('Location: home.php');
         }else{
-            echo "Email e password invalide";
+            echo "Email o password invalide";
         }
 
+    }else {
+        echo "Per accedere inserire sia email che password";
     }
 
 }
+
+// Password reset logic
 if(isset($_POST['reset_btn'])){
 
     $uname = mysqli_real_escape_string($conn,$_POST['email']);

@@ -48,7 +48,7 @@ if($result && $result->num_rows > 0) {
 
     <!-- Main section -->
     <main>
-        <div class="welcome">Ciao <?php echo $userdata['nome'] ?> ecco i tuoi eventi</div>
+        <div class="welcome">Ciao <?php echo $userdata['nome']?> <?php echo $userdata['cognome'] ?> ecco i tuoi eventi</div>
         <div class="container-wide">
             <!-- events mask -->
             <?php foreach ($events as $event) { ?>
