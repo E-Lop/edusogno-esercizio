@@ -81,7 +81,7 @@ if(isset($_POST['overwrite_btn'])){
                     <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com"><br>
                     <!-- password input -->
                     <label for="password">Inserisci la nuova password</label><br>
-                    <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
+                    <input class="input_field_style" type="text" name="password" id="password" placeholder="Scrivila qui"><br>
                     <!-- submit button -->
                     <input class="blue_btn access_btn" type="submit" value="Salva nuova password" name="overwrite_btn" id="overwrite_btn">
                 </form>
