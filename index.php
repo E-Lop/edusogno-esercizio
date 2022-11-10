@@ -80,6 +80,7 @@ if(isset($_POST['reset_btn'])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets\styles\style.css">
 </head>
 <body>
@@ -101,8 +102,11 @@ if(isset($_POST['reset_btn'])){
                     <label for="email">Inserisci l'e-mail</label><br>
                     <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com"><br>
                     <!-- password input -->
-                    <label for="password">Inserisci la password</label><br>
-                    <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
+                    <div class="eye">
+                        <label for="password">Inserisci la password</label><br>
+                        <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
+                        <i class="fa-solid fa-eye" id="togglePassword"></i>
+                    </div>
                     <!-- submit button -->
                     <input class="blue_btn access_btn" type="submit" value="ACCEDI" name="login_btn" id="login_btn">
                     <!-- password reset button -->
@@ -112,5 +116,6 @@ if(isset($_POST['reset_btn'])){
             </div>
         </div>
     </main>
+    <script type="text/javascript" src="assets\js\script.js"></script>
 </body>
 </html>
