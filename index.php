@@ -56,7 +56,7 @@ if(isset($_POST['reset_btn'])){
 
         if($count > 0){
             $_SESSION['uname'] = $uname;
-            // invio email
+            // se l'email è presente nel db invio email con link di reset
             $to = "$uname";
             $subject = "Reimposta la password di Edusogno";
             
@@ -115,13 +115,13 @@ if(isset($_POST['reset_btn'])){
             <!-- Login mask -->
             <div class="login_card">
                 <form method="post" action="">
-                    <!-- username input -->
-                    <label for="email">Inserisci l'e-mail</label><br>
-                    <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com"><br>
+                    <!-- email input -->
+                    <label for="email">Inserisci l'e-mail</label>
+                    <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com">
                     <!-- password input -->
                     <div class="eye">
-                        <label for="password">Inserisci la password</label><br>
-                        <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
+                        <label for="password">Inserisci la password</label>
+                        <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui">
                         <i class="fa-solid fa-eye" id="togglePassword"></i>
                     </div>
                     <!-- submit button -->

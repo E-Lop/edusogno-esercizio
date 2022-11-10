@@ -21,7 +21,7 @@ if($result && $result->num_rows > 0) {
         $events[] = $row;
     }
 } else {
-    // Si può fare qualcosa se non ci sono risultati dal db
+    // Se non ci sono risultati dal db
     echo 'Nessun risultato';
 }
 ?>

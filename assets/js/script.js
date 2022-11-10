@@ -1,3 +1,4 @@
+// icon that toggles password visibility
 const togglePassword = document.querySelector('#togglePassword');
 const password = document.querySelector('#password');
 

@@ -58,7 +58,7 @@ if(isset($_POST['signup_btn'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrazione</title>
+    <title>Edusogno - Registrazione</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -82,48 +82,28 @@ if(isset($_POST['signup_btn'])){
             <div class="login_card">
             <form method='post' action=''>
 
-                <?php 
-                // Display Error message
-                if(!empty($error_message)){
-                ?>
-                <div class="alert alert-danger">
-                <strong>Errore!</strong> <?= $error_message ?>
-                </div>
-
-                <?php
-                }
-                ?>
-
-                <?php 
-                // Display Success message
-                if(!empty($success_message)){
-                ?>
-                <div class="alert alert-success">
-                <strong>Successo!</strong> <?= $success_message ?>
-                </div>
-
-                <?php
-                }
-                ?>
-
+                <!-- name input -->
                 <div class="form-group">
                 <label for="nome">Inserisci il nome</label>
                 <input type="text" class="form-control input_field_style" name="nome" id="nome" placeholder="Mario" required="required" maxlength="80">
                 </div>
+                <!-- surname input -->
                 <div class="form-group">
                 <label for="cognome">Inserisci il cognome</label>
                 <input type="text" class="form-control input_field_style" name="cognome" id="cognome" placeholder="Rossi" required="required" maxlength="80">
                 </div>
+                <!-- email input -->
                 <div class="form-group">
                 <label for="email">Inserisci l'email</label>
                 <input type="email" class="form-control input_field_style" name="email" id="email" placeholder="name@example.com" required="required" maxlength="80">
                 </div>
+                <!-- password input -->
                 <div class="eye">
                   <div class="form-group">
                   <label for="password">Inserisci la password</label>
                   <input type="password" class="form-control input_field_style" name="password" id="password" placeholder="Scrivila qui" required="required" maxlength="80">
                   <i class="fa-solid fa-eye" id="togglePassword"></i>
-                </div>
+                  </div>
                 </div>
                 
                 <button type="submit" name="signup_btn" class="blue_btn access_btn">Registrati</button>

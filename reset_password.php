@@ -54,7 +54,7 @@ if(isset($_POST['overwrite_btn'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduSogno</title>
+    <title>EduSogno - Reimposta password</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -77,11 +77,11 @@ if(isset($_POST['overwrite_btn'])){
             <div class="login_card">
                 <form method="post" action="">
                     <!-- username input -->
-                    <label for="email">Inserisci l'e-mail</label><br>
-                    <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com"><br>
+                    <label for="email">Inserisci l'e-mail</label>
+                    <input class="input_field_style" type="text" name="email" id="email" placeholder="name@example.com">
                     <!-- password input -->
-                    <label for="password">Inserisci la nuova password</label><br>
-                    <input class="input_field_style" type="text" name="password" id="password" placeholder="Scrivila qui"><br>
+                    <label for="password">Inserisci la nuova password</label>
+                    <input class="input_field_style" type="text" name="password" id="password" placeholder="Scrivila qui">
                     <!-- submit button -->
                     <input class="blue_btn access_btn" type="submit" value="Salva nuova password" name="overwrite_btn" id="overwrite_btn">
                 </form>

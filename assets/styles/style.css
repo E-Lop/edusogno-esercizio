@@ -15,14 +15,7 @@ a {
     color: inherit;
 }
 
-/* HEADER SECTION */
-header img {
-    padding-top: 40px;
-    margin-bottom: 30px;
-    margin-left: 50px;
-    width: 123px;
-}
-
+/*** HEADER SECTION ***/
 header {
     border-bottom: 1px solid #00000003;
     border-radius: 0 0 13px 13px;
@@ -30,8 +23,14 @@ header {
     margin-bottom: 122px;
     background-color: white;
 }
+header img {
+    padding-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    width: 123px;
+}
 
-/* MAIN SECTION */
+/*** MAIN SECTION ***/
 body {
     background-color: #d9e5f3;
 }
@@ -103,7 +102,6 @@ input::placeholder {
     padding-bottom: 19px;
     margin-bottom: 49px;
 }
-
 .invite {
     align-self: center;
     color: #2D224C;
@@ -122,7 +120,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* HOME.php */
+/*** HOME.php ***/
 .welcome {
     text-align: center;
     font-size: 32px;
