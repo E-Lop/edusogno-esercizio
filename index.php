@@ -7,20 +7,32 @@ if(isset($_POST['login_btn'])){
 
     $uname = mysqli_real_escape_string($conn,$_POST['email']);
     $password = mysqli_real_escape_string($conn,$_POST['password']);
-
+    // se i campi email e password non sono vuoti
     if ($uname != "" && $password != ""){
 
-        $sql_query = "select count(*) as cntUser from utenti where email='".$uname."' and password='".$password."'";
-        $result = mysqli_query($conn,$sql_query);
-        $row = mysqli_fetch_array($result);
+        // verifico se l'email è registrata nel db
+        $sql_query1 = "select count(*) as cntUser from utenti where email='".$uname."'";
+        $result1 = mysqli_query($conn,$sql_query1);
+        $row = mysqli_fetch_array($result1);
 
         $count = $row['cntUser'];
-
+        // se l'email è corretta
         if($count > 0){
-            $_SESSION['uname'] = $uname;
-            header('Location: home.php');
+            // verifico che anche la password sia registrata
+            $sql_query2 = "select count(*) as cntUser from utenti where email='".$uname."' and password='".$password."'";
+            $result2 = mysqli_query($conn,$sql_query2);
+            $row2 = mysqli_fetch_array($result2);
+
+            $count2 = $row2['cntUser'];
+            // se email e password sono corrette accedo
+            if($count2 > 0){
+                $_SESSION['uname'] = $uname;
+                header('Location: home.php');
+            }else{
+                echo "Password non riconosciuta";
+            }
         }else{
-            echo "Email o password invalide";
+            echo "Email non riconosciuta";
         }
 
     }else {
