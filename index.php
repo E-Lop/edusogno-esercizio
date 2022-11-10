@@ -25,6 +25,46 @@ if(isset($_POST['login_btn'])){
     }
 
 }
+if(isset($_POST['reset_btn'])){
+
+    $uname = mysqli_real_escape_string($conn,$_POST['email']);
+
+    if ($uname != ""){
+
+        $sql_query = "select count(*) as cntUser from utenti where email='".$uname."'";
+        $result = mysqli_query($conn,$sql_query);
+        $row = mysqli_fetch_array($result);
+
+        $count = $row['cntUser'];
+
+        if($count > 0){
+            $_SESSION['uname'] = $uname;
+            // invio email
+            $to = "$uname";
+            $subject = "Reimposta la password di Edusogno";
+            
+            $message = "<b>Clicca sul link per reimpostare la password di Edusogno.</b>";
+            $message .= "<a href=\"http://localhost:8888/edusogno-esercizio/reset_password.php\">Reimposta la password.</a>";
+            
+            $headers = "From:info@edusogno.com \r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-type: text/html\r\n";
+            
+            $retval = mail($to,$subject,$message,$headers);
+            if( $retval == true ) {
+                echo "Message sent successfully...";
+            }else {
+                echo "Message could not be sent...";
+            }
+        }else{
+            echo "L'indirizzo email non risulta registrato";
+        }
+
+    }else{
+        echo "Inserire indirizzo email a cui sarà inviato il link per reimpostare la password";
+    }
+
+}
 
 ?>
 
@@ -65,6 +105,8 @@ if(isset($_POST['login_btn'])){
                     <input class="input_field_style" type="password" name="password" id="password" placeholder="Scrivila qui"><br>
                     <!-- submit button -->
                     <input class="blue_btn access_btn" type="submit" value="ACCEDI" name="login_btn" id="login_btn">
+                    <!-- password reset button -->
+                    <input class="red_btn access_btn" type="submit" value="Reimposta Password" name="reset_btn" id="reset_btn">
                 </form>
                 <div class="invite">Non hai ancora un profilo? <a href="register.php">Registrati</a> </div>
             </div>

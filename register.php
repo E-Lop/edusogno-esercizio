@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/database_connection.php';
 
-$error_message = "";$success_message = "";
 
 // Register user
 if(isset($_POST['signup_btn'])){
@@ -15,13 +14,13 @@ if(isset($_POST['signup_btn'])){
    // Check fields are empty or not
    if($nome == '' || $cognome == '' || $email == '' || $password == ''){
      $isValid = false;
-     $error_message = "Si prega di riempire tutti i campi.";
+     echo "Si prega di riempire tutti i campi.";
    }
 
    // Check if Email-ID is valid or not
    if ($isValid && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
      $isValid = false;
-     $error_message = "Email invelida.";
+     echo "Email invalida.";
    }
 
    if($isValid){
@@ -34,7 +33,7 @@ if(isset($_POST['signup_btn'])){
      $stmt->close();
      if($result->num_rows > 0){
        $isValid = false;
-       $error_message = "L'email inserita è già registrata.";
+       echo "L'email inserita è già registrata.";
      }
 
    }
@@ -47,7 +46,7 @@ if(isset($_POST['signup_btn'])){
      $stmt->execute();
      $stmt->close();
 
-     $success_message = "Account creato con successo.";
+     echo "Account creato con successo.";
    }
 }
 

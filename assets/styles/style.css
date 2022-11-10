@@ -87,6 +87,16 @@ input::placeholder {
     border-style: none;
     text-align: center;
 }
+.red_btn {
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 11px;
+    border-style: none;
+    text-align: center;
+}
 .access_btn {
     width: 577px;
     padding-top: 20px;
