@@ -111,6 +111,16 @@ input::placeholder {
 .invite a {
     font-weight: 700;
 }
+.eye {
+    position: relative;
+}
+.eye i {
+    position: absolute;
+    right: 13px;
+    top: 30px;
+    color: #0057FF;
+    cursor: pointer;
+}
 
 /* HOME.php */
 .welcome {

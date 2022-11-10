@@ -62,6 +62,7 @@ if(isset($_POST['signup_btn'])){
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets\styles\style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -117,9 +118,12 @@ if(isset($_POST['signup_btn'])){
                 <label for="email">Inserisci l'email</label>
                 <input type="email" class="form-control input_field_style" name="email" id="email" placeholder="name@example.com" required="required" maxlength="80">
                 </div>
-                <div class="form-group">
-                <label for="password">Inserisci la password</label>
-                <input type="password" class="form-control input_field_style" name="password" id="password" placeholder="Scrivila qui" required="required" maxlength="80">
+                <div class="eye">
+                  <div class="form-group">
+                  <label for="password">Inserisci la password</label>
+                  <input type="password" class="form-control input_field_style" name="password" id="password" placeholder="Scrivila qui" required="required" maxlength="80">
+                  <i class="fa-solid fa-eye" id="togglePassword"></i>
+                </div>
                 </div>
                 
                 <button type="submit" name="signup_btn" class="blue_btn access_btn">Registrati</button>
@@ -128,5 +132,6 @@ if(isset($_POST['signup_btn'])){
             </div>
         </div>
     </main>
+    <script type="text/javascript" src="assets\js\script.js"></script>
 </body>
 </html>
